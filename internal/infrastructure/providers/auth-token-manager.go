@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/gabriel-98/bingo-backend/internal/application/types"
-	//"github.com/gabriel-98/bingo-backend/internal/config"
+	"github.com/gabriel-98/bingo-backend/internal/config"
 	"github.com/golang-jwt/jwt/v5"
 	"strconv"
 	"time"
@@ -22,18 +22,13 @@ type AuthTokenManager struct {
 // NewAuthTokenManager creates a new AuthTokenManager using the configuration set
 // for the token durations (access and refresh), the signing key (also for each token
 // type), and the token issuer.
-func NewAuthTokenManager(/*config config.AuthConfig*/) *AuthTokenManager {
+func NewAuthTokenManager(config config.AuthConfig) *AuthTokenManager {
 	return &AuthTokenManager{
-		/*refreshTokenDuration: config.RefreshToken.Duration,
+		refreshTokenDuration: config.RefreshToken.Duration,
 		refreshSigningKey: config.RefreshToken.SigningKey,
 		accessTokenDuration: config.AccessToken.Duration,
 		accessSigningKey: config.AccessToken.SigningKey,
-		issuer: config.Issuer,*/
-		refreshTokenDuration: 600 * time.Second,
-		refreshSigningKey: "abc",
-		accessTokenDuration: 120 * time.Second,
-		accessSigningKey: "def",
-		issuer: "Bingo APP",
+		issuer: config.Issuer,
 	}
 }
 

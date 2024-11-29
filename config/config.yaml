@@ -1,0 +1,23 @@
+server:
+  port: 9001
+database:
+  driverName: "postgres"
+  host: "localhost"
+  port: 5432
+  user: "postgres"
+  password: "password"
+  name: "Bingo"
+  sslmode: "disable"
+  timeZone: "America/Bogota"
+auth:
+  refreshToken:
+    duration: 10m
+    signingKey: "refresh-key-gUbKiwT2FtGESiBccyMJDGRJmEWTrFA3"
+  accessToken:
+    duration: 2m
+    signingKey: "access-key-S7QaEphj1Gc35RKUq0iNpt2Zgq8v2VtM"
+  issuer: "BINGO APP"
+passwordHashing:
+  algorithm: "bcrypt"
+  bcrypt:
+    cost: 10
